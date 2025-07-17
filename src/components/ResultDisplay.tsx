@@ -20,22 +20,24 @@ export function ResultDisplay({ title, data, scanRan, emptyText = "No data found
       </CardHeader>
       <CardContent>
         {data && data.length > 0 ? (
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="w-[30%]">Key</TableHead>
-                <TableHead>Value</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {data.map(({ key, value }, index) => (
-                <TableRow key={`${key}-${index}`}>
-                  <TableCell className="font-medium text-foreground/80 break-all">{key}</TableCell>
-                  <TableCell className="font-code text-accent-foreground break-all">{value}</TableCell>
+          <div className="max-h-60 overflow-y-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[30%]">Key</TableHead>
+                  <TableHead>Value</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {data.map(({ key, value }, index) => (
+                  <TableRow key={`${key}-${index}`}>
+                    <TableCell className="font-medium text-foreground/80 break-all">{key}</TableCell>
+                    <TableCell className="font-code text-accent-foreground break-all">{value}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         ) : (
           <p className="text-center text-muted-foreground italic py-4">{emptyText}</p>
         )}
