@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fingerprint, EyeOff, History, Brain, Database, Workflow, Link as LinkIcon, ShieldCheck } from "lucide-react";
+import { Fingerprint, EyeOff, History, Brain, Database, Workflow, Link as LinkIcon, ShieldCheck, Paintbrush } from "lucide-react";
 import { AutofillScanner } from "@/components/AutofillScanner";
 import { HiddenFormScanner } from "@/components/HiddenFormScanner";
 import { CacheDetective } from "@/components/CacheDetective";
@@ -7,6 +7,7 @@ import { MemoryLane } from "@/components/MemoryLane";
 import { StorageExcavator } from "@/components/StorageExcavator";
 import { WorkerWatcher } from "@/components/WorkerWatcher";
 import { PrefetchPeek } from "@/components/PrefetchPeek";
+import { CanvasFingerprint } from "@/components/CanvasFingerprint";
 import { RemediationGuide } from "@/components/RemediationGuide";
 
 interface Feature {
@@ -19,6 +20,7 @@ interface Feature {
 export const featuresConfig: Feature[] = [
   { value: "autofill", title: "Autofill Scanner", Icon: Fingerprint, Component: AutofillScanner },
   { value: "hidden-forms", title: "Hidden Form Scanner", Icon: EyeOff, Component: HiddenFormScanner },
+  { value: "canvas-fingerprint", title: "Canvas Fingerprinter", Icon: Paintbrush, Component: CanvasFingerprint },
   { value: "cache-detective", title: "Cache Detective", Icon: History, Component: CacheDetective },
   { value: "memory-lane", title: "Memory Lane", Icon: Brain, Component: MemoryLane },
   { value: "storage", title: "Storage Excavator", Icon: Database, Component: StorageExcavator },
