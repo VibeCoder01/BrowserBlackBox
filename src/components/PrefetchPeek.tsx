@@ -20,8 +20,8 @@ export function PrefetchPeek() {
 
     links.forEach(link => {
       newResults.push({
-        key: `Type: ${link.getAttribute('rel')}`,
-        value: link.getAttribute('href') || 'No href found',
+        key: link.getAttribute('href') || 'No href found',
+        value: `Type: ${link.getAttribute('rel')}`,
       });
     });
 

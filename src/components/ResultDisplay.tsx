@@ -28,9 +28,9 @@ export function ResultDisplay({ title, data, scanRan, emptyText = "No data found
               </TableRow>
             </TableHeader>
             <TableBody>
-              {data.map(({ key, value }) => (
-                <TableRow key={key}>
-                  <TableCell className="font-medium text-foreground/80">{key}</TableCell>
+              {data.map(({ key, value }, index) => (
+                <TableRow key={`${key}-${index}`}>
+                  <TableCell className="font-medium text-foreground/80 break-all">{key}</TableCell>
                   <TableCell className="font-code text-accent-foreground break-all">{value}</TableCell>
                 </TableRow>
               ))}
